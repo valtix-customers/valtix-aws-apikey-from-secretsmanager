@@ -11,13 +11,11 @@ data "local_file" "workspace_check" {
 
 # AWS Secrets Manager
 module "aws" {
-  aws_account_number            = var.aws_account_number
-  aws_account_region            = var.aws_account_region
-  aws_secrets_name              = var.aws_secrets_name
-  source                        = "./aws"
+  aws_secrets_name = var.aws_secrets_name
+  source           = "./aws"
 }
 
 # Valtix Cloud Account
 module "valtix" {
-  source                         = "./valtix"
+  source = "./valtix"
 }
