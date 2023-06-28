@@ -9,7 +9,7 @@ terraform {
   required_providers {
     valtix = {
       source  = "valtix-security/valtix"
-      version = "22.5.2"
+      version = "24.4.1"
     }
     aws = {
       source  = "hashicorp/aws"
@@ -26,6 +26,6 @@ provider "aws" {
 
 # Set the Valtix Terraform Provider Settings
 provider "valtix" {
-  acctname     = var.valtix_aws_account_name
-  api_key_file = file(var.valtix_api_key_file)
+  acctname = var.valtix_aws_account_name
+  api_key  = data.valtix_api_key
 }
